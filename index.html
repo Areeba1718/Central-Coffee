@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+   <!-- bootstrap cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/css/bootstrap.min.css">
+    <title>Central coffee</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap');
+
+/* color pallette */
+:root{
+  --main-color: rgb(53, 56, 75);
+  --primary-color: rgb(233, 220, 204);
+  --light-white: #fff6eb;
+  --light-gray: #ccc;
+  --black: #13131a;
+  --white: #fff;
+  --gray: #444;
+  --orange: #ffaa42;
+  --border: .1rem solid rgba(255,255,255,.3);
+}
+
+*{
+  font-family: 'Abyssinica SIL', serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  transition: .2s linear;
+}
+
+html{
+  font-size:62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* set scrollbar style */
+html::-webkit-scrollbar{
+  width: .8rem;
+}
+
+html::-webkit-scrollbar-trak{
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+  background: var(--main-color);
+}
+/* public class */
+section{
+  padding: 2rem 7%;
+}
+
+.heading{
+  margin:3rem;
+  text-align: left;
+  font-size: 3rem;
+  text-transform: capitalize;
+  color: var(--main-color);
+}
+/* end */
+
+/* header */
+.header{
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--main-color);
+  padding: 2rem 10%;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+}
+
+.header .logo{
+  margin-right: auto;
+  text-transform: capitalize;
+  color : var(--white);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.header .logo i {
+  font-size: 2.5rem;
+  margin-right:1.2rem;
+}
+
+.header .logo{
+  font-size: 1.5rem;
+  text-align:right;
+}
+
+.header .navbar{
+  position: relative;
+}
+
+.header .navbar #close-navbar{
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  font-size: 4rem;
+  cursor:pointer;
+  color: var(--main-color);
+  display:none;
+}
+
+/* end */
+
+/* linked list */
+.header .navbar a{
+  margin-right: 2rem;
+  font-size: 2rem;
+  text-transform: capitalize;
+  color: var(--white);
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.header .navbar a:hover{
+  color: var(--primary-color);
+}
+
+.header .icons div{
+  margin-left: 1.5rem;
+  font-size:2.5rem;
+  cursor:pointer;
+  color: var(--white);
+}
+
+.header .icons div:hover{
+  color: var(--primary-color);
+  
+}
+
+.header #menu-btn{
+  display: none;
+}
+/* end */
+
+/* home */
+.home{
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5),  rgba(0, 0, 0, 0.5)), url('bg.jpg');
+}
+
+.home .content{
+  min-width: 60rem;
+}
+
+.home .content h3{
+  font-size: 8rem;
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.home .content h6{
+    font-size: 1.8rem;
+    color: var(--white);
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+/* end */
+
+/* about */
+
+.about{
+  background-repeat: repeat-y;
+  background-color:  var(--primary-color);
+  background-position: center top;
+}
+
+.about .heading{
+  margin-left: 23%;
+  margin-right: 23%;
+}
+
+.about p{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:  var(--main-color);
+  margin-left: 23%;
+  margin-right: 23%;
+  font-size: 1.6rem;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.about .gallery{
+  margin-left: 23%;
+  margin-right: 23%;
+  margin-bottom: 3rem;
+}
+
+.about .gallery img {
+    width: 21%;
+    margin: 1%;
+  }
+
+/* end */
+
+/* about */
+
+.menu{
+  background-repeat: repeat-y;
+  background-color:  var(--main-color);
+  background-position: center top;
+  width: 100%;
+}
+
+.menu .heading{
+  margin-left: 23%;
+  margin-right: 23%;
+  color: white;
+}
+
+ .menu p{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:  white;
+  margin-left: 23%;
+  margin-right: 23%;
+  font-size: 1.6rem;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.menu h3{
+  color: #fff;
+  position: relative;
+  left: 28%;
+  margin: 4% 0%;
+  font-weight: 700;
+}
+
+.menu .container{
+  position: relative;
+  z-index: 10;
+  margin-left: 23%;
+  margin-right: 40%;
+}
+.menu .container .info .col-lg-4{
+  padding: 0;
+}
+.menu .container .info .col-lg-4 .row{
+  padding: 0;
+  display: inline-block;
+  margin: 0;
+}
+.menu  img {
+    width: 26rem;
+  }
+
+.menu .text{
+  color: #fff;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 1.4rem;
+  position: relative; right: 16%
+}
+
+
+
+/* end */
+
+/* location*/
+
+.location{
+  background-color:  var(--primary-color);
+}
+.location .heading{
+    display: flex;
+    margin-left: 23%;
+    margin-right: 23%;
+  }
+
+.location .container .info .col-lg-6 .row{
+  padding: 0;
+}
+
+.location .container {
+    position: relative;
+    z-index: 10;
+    
+    margin-left: 23%;
+    margin-right: 23%;
+}
+
+.location p{
+	font-size: 14px;
+    line-height: 24px;
+    color: var(--main-color);
+    margin-bottom: 0;
+    padding: 0 20px 20px 20px;
+}
+
+
+/* end */
+
+
+
+/* media queries */
+
+@media (max-width:991px){
+  
+  html{
+    font-size: 55%;
+  }
+  
+  .header{
+    padding: 2rem 5%;
+  }
+  
+  section{
+    padding: 2rem;
+  }
+}
+
+@media (max-width:768px){
+  
+  .header #menu-btn{
+    display: inline-block;
+  }
+  
+  .header .navbar{
+    position: fixed;
+    top: 0;
+    right: -105%;
+    width: 60rem;
+    background: var(--white);
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flex-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            -ms-flex-flow: column;
+                flex-flow: column;
+    -webkit-box-pack: center;
+         -ms-flex-pack: center;
+             justify-content: center;
+    z-index: 1200;
+  }
+  
+  .header .navbar #close-navbar{
+    color: var(--main-color);
+    display: block;
+  }
+  
+  .header .navbar.active{
+    box-shadow: 0 0 0 100vw rgba(0,0,0,0.8); /* rtl */
+    right: 0; /* rtl */
+  }
+  
+  .header .navbar a{
+    color: var(--main-color);
+    display: block;
+    margin: 1rem 0;
+    text-align: center;
+    font-size: 3rem;
+  }
+  
+/*   home */
+  .home{
+    background-position: left; /* rtl */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .home .content h3{
+    font-size: 4rem;
+  }
+}
+
+@media (max-width:450px){
+  
+  html{
+    font-size: 50%;
+  }
+}
+    </style>
+</head>
+<body>
+    <!-- header -->
+<header class="header">
+    <!--   logo -->
+      <a href="#" class="logo">
+        <i class="fas fa-coffee"></i>Central Coffee
+      </a>
+      
+    <!--   linked list -->
+      <nav class="navbar">
+        <div id="close-navbar" class="fas fa-times"></div>
+        <a href="#">home</a>
+        <a href="#about">about</a>
+        <a href="#menu">menu</a>
+        <a href="#location">Location</a>
+      </nav>
+      
+    <!--   humburger menu  -->
+      <div class="icons">
+        <div id="menu-btn" class="fas fa-bars"></div>
+      </div>
+    </header>
+    <!-- end header -->
+    <!-- Home -->
+    <section id="home" class="home">
+      <div class="content">
+        <h3>
+          Central  Coffee
+        </h3>
+        <h6>Bespoke organically-sourced Coffee</h6>
+      </div>
+    </section>
+    <!-- home -->
+    
+    <!-- About us -->
+    <section id="about" class="about">
+      <h1 class="heading">about</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit vel consectetur consequatur quis libero, aliquam eaque culpa ex qui hic odit, assumenda laboriosam ipsam ea iure mollitia repellat voluptate.
+        Consequatur dignissimos aliquam voluptatum mollitia, iusto earum alias modi animi fugit distinctio eligendi velit facilis ab esse repudiandae, ipsa labore porro blanditiis quaerat vel numquam deserunt, minus dolorum? Iste, quaerat.</p>
+        <div class="gallery">
+            <img src="https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-5/tsunami-coffee/images/latte.png" />
+            <img src="https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-5/tsunami-coffee/images/coffee-man.png" />
+            <img src="https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-5/tsunami-coffee/images/pastries.png" />
+            <img src="https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-5/tsunami-coffee/images/pastries.png" />
+        </div>
+    </section>
+    <!-- end -->
+    
+    <!-- Menu -->
+    <section id="menu" class="menu">
+      <h1 class="heading">Menu</h1>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. A eius, aut repellendus quaerat itaque numquam dignissimos excepturi fugit. Perspiciatis asperiores ipsam laudantium distinctio doloribus molestias voluptate, corrupti nam earum accusamus!
+      Doloremque, ab cupiditate necessitatibus numquam ut nesciunt</p>
+      <div class="container">
+        <div class="info row">
+          <div class="col-lg-4">
+            <div class="row ">
+              <h3 style="position: relative; left:35%">DRINKS</h3>
+              <img src="drinks.jpg" />
+              <div  class="text" style="position: relative; right: 0%">
+                <span>Coffee</span><br>
+                <span>necessitatibus</span><br>
+                <span>India</span><br>
+                <span>consecteturadispanisicing</span><br>
+                <span>spanariatur</span><br>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+              <h3>FOOD</h3>
+              <img src="food.jpg" />
+              <div class="text">
+                <span>Coffee</span><br>
+                <span>necessitatibus</span><br>
+                <span>India</span><br>
+                <span>consecteturadispanisicing</span><br>
+              </div>
+          </div>
+        </div>
+      </div> 
+
+        
+    </section>
+    <!-- end -->
+    
+    
+    <!-- location-->
+    <section id="location" class="location">
+      
+      <h1 class="heading">Location</h1>
+      
+        <div class="container">
+          <div class="info row">
+            <div class="col-md-4">
+              <div class="row ">
+                <div class="mapouter"><div class="gmap_canvas">
+			<iframe class="gmap_iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/d/embed?mid=1IM4x3eQzJjbDhswOFNSnNRv58T-31F8&ehbc=2E312F&noprof=1"></iframe></div><style>.mapouter{position:relative;text-align:right;width:350px;height:400px;}.gmap_canvas {overflow:hidden;background:none!important;width:350px;height:400px;}.gmap_iframe{width:350px!important;height:400px!important;}</style></div></div>
+            </div>
+            <div class="col-lg-6">
+            <p>HOURS</p>
+            <br>
+            <p>Mon-Thurs-- 7am to 8pm</p>
+            <p>Fri-Sun-- 8am to 10pm</p>
+          </div>
+          </div>  
+        </div>
+      </div>   
+      
+      <h6 style="font-size: 1.5rem; display: flex; 
+                margin-top: 10%;
+                align-items: center;
+                justify-content: center;">
+                Central Coffee &copy; 2019 </h6>
+    </section>
+    <!-- end -->
+
+    <script>
+        let navbar = document.querySelector('.header .navbar');
+
+document.querySelector('#menu-btn').onclick = () =>{
+  navbar.classList.add('active');
+}
+
+document.querySelector('#close-navbar').onclick = () =>{
+  navbar.classList.remove('active');
+}
+    </script>
+</body>
+</html>
